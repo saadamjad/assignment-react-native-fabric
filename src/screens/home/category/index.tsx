@@ -17,6 +17,7 @@ import {
 	getCategoriesData,
 	isLoading,
 } from '../../../state/selectors/features/category';
+import { ROUTES } from '../../../constants/navigation-routes';
 
 const ProductList = ({ navigation }: ProductListProps) => {
 	const [page, setPage] = useState<number>(10);
@@ -62,15 +63,17 @@ const ProductList = ({ navigation }: ProductListProps) => {
 			/>
 		);
 	};
-
-	const navigationHandler = () => BackHandler.exitApp();
+	const navigationHandler = () => {
+		navigation.navigate(ROUTES.CHECK_OUT);
+	};
 
 	const renderHeader = () => (
 		<Header
 			testID='headerComponent'
-			onPress={navigationHandler}
 			navigation={navigation}
 			headerText={staticText.NAME}
+			onPress={navigationHandler}
+			goBackDisabled
 		/>
 	);
 	return (

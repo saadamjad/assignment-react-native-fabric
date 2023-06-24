@@ -16,13 +16,13 @@ import styles from './styled';
 const Header: React.FC<IHeaderProps> = ({
 	headerText,
 	leftIcon = true,
-	rightComponent = () => console.log(),
 	backgroundColor = 'transparent',
 	onPress,
 	rightImage = Images.images.cart,
 	navigation,
 	testID = 'headerComponent',
 	isCrossIcon = false,
+	goBackDisabled = false,
 }) => {
 	const cartItemsCount = useSelector(getCartCount);
 	const isCartCountShown = cartItemsCount > 0;
@@ -33,18 +33,10 @@ const Header: React.FC<IHeaderProps> = ({
 			return (
 				<TouchableOpacity
 					onPress={navigationGoBack}
-					style={{
-						height: 40,
-						borderRadius: 40,
-						alignItems: 'center',
-						justifyContent: 'center',
-						width: 40,
-						backgroundColor: Colors.lighGrayColor_1,
-						paddingTop: 10,
-					}}>
+					style={styles.crossIconContainer}>
 					<Image
 						source={Images.images.cross}
-						style={{ height: 90, width: 90 }}
+						style={styles.crossImage}
 					/>
 				</TouchableOpacity>
 			);
@@ -67,6 +59,7 @@ const Header: React.FC<IHeaderProps> = ({
 	const renderLeft = () => (
 		<TouchableOpacity
 			activeOpacity={0.8}
+			disabled={goBackDisabled}
 			style={styles.leftContainer}
 			onPress={navigationGoBack}>
 			{leftIcon && (
@@ -90,4 +83,4 @@ const Header: React.FC<IHeaderProps> = ({
 	);
 };
 
-export default Header;
+export default React.memo(Header);

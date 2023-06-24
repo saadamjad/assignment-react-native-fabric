@@ -15,6 +15,14 @@ const styles: IPropsStyleSheet = StyleSheet.create({
 		width: '100%',
 		height: '100%',
 	},
+	loaderContainer: {
+		position: 'absolute',
+		height: '100%',
+		width: '100%',
+		backgroundColor: 'black',
+		opacity: 0.8,
+		justifyContent: 'center',
+	},
 	productDetails: {
 		justifyContent: 'flex-end',
 		backgroundColor: Colors.background,

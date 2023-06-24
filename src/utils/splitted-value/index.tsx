@@ -1,5 +1,6 @@
 const getSliptedValue = (value: string) => {
-  return value?.split(' ');
+  if (value) return value?.split(' ');
+	return '';
 };
 
 export {getSliptedValue};

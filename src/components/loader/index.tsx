@@ -8,7 +8,7 @@ const AppLoader = ({isActive}: {isActive: boolean}) => {
 			<ActivityIndicator
 				testID='activityIndicator'
 				size='large'
-				color={Colors.primary}
+				color={Colors.secondary}
 			/>
 		);
   }

@@ -14,22 +14,22 @@ export const {store, persistor} = reduxStore();
 
 const App = () => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
-      <StatusBar
-        barStyle={'dark-content'}
-        translucent={false}
-        backgroundColor="transparent"
-      />
-      <Provider store={store}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          style={{flex: 1}}
-          keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 20}>
-          <AppConfigLoader />
-        </KeyboardAvoidingView>
-      </Provider>
-    </SafeAreaView>
-  );
+		<SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+			<StatusBar
+				barStyle={'dark-content'}
+				translucent={false}
+				backgroundColor='transparent'
+			/>
+			<Provider store={store}>
+				<KeyboardAvoidingView
+					behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+					style={{ flex: 1 }}
+					keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 20}>
+					<AppConfigLoader />
+				</KeyboardAvoidingView>
+			</Provider>
+		</SafeAreaView>
+	);
 };
 
 export default React.memo(App);

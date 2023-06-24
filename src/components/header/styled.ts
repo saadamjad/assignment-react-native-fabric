@@ -1,7 +1,7 @@
 /** @format */
 
 import { StyleSheet } from 'react-native';
-import colors from '../../utils/theme/colors';
+import { Colors } from '../../utils/theme';
 
 const styles: IPropsStyleSheet = StyleSheet.create({
 	header: {
@@ -18,7 +18,17 @@ const styles: IPropsStyleSheet = StyleSheet.create({
 	headerText: {
 		fontSize: 16,
 	},
-	rightText: { color: colors.background, fontSize: 10 },
+	crossIconContainer: {
+		height: 40,
+		borderRadius: 40,
+		alignItems: 'center',
+		justifyContent: 'center',
+		width: 40,
+		backgroundColor: Colors.lighGrayColor_1,
+		paddingTop: 10,
+	},
+	crossImage: { height: 90, width: 90 },
+	rightText: { color: Colors.background, fontSize: 10 },
 	leftContainer: {
 		width: '33.33%',
 		height: '100%',
@@ -36,7 +46,7 @@ const styles: IPropsStyleSheet = StyleSheet.create({
 	rightImageContainer: {
 		top: -14,
 		right: -10,
-		backgroundColor: colors.secondary,
+		backgroundColor: Colors.secondary,
 		alignItems: 'center',
 		justifyContent: 'center',
 		width: 18,

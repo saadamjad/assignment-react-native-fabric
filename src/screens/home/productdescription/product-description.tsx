@@ -35,11 +35,15 @@ const ProductDescriptionCard: React.FC = ({
 	};
 
 	const _renderLoader = () => {
-		return (
-			<View testID='appLoaderComponent'>
-				<AppLoader isActive={loader} />
-			</View>
-		);
+		if (!description)
+			return (
+				<View
+					style={styles.loaderContainer}
+					testID='appLoaderComponent'>
+					<AppLoader isActive={true} />
+				</View>
+			);
+		return null;
 	};
 
 	const _renderHeader = () => {
@@ -84,7 +88,6 @@ const ProductDescriptionCard: React.FC = ({
 					style={styles.backgroundImage}
 					resizeMode='cover'
 				/>
-				{_renderLoader()}
 				{_renderHeader()}
 				<View style={styles.discriptionContainer}>
 					<View style={styles.productDetails}>
@@ -102,6 +105,7 @@ const ProductDescriptionCard: React.FC = ({
 
 						{_renderAddToCartButtons()}
 					</View>
+					{_renderLoader()}
 				</View>
 			</View>
 		);
@@ -116,4 +120,4 @@ const ProductDescriptionCard: React.FC = ({
 	);
 };
 
-export default ProductDescriptionCard;
+export default React.memo(ProductDescriptionCard);

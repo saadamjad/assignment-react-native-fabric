@@ -1,24 +1,24 @@
 /** @format */
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { TextInput } from 'react-native';
 import styles from './styled';
-
 import { getCategoriesData } from '../../state/selectors/features/category';
 import { useSelector } from 'react-redux';
 
 const SearchTextInput = ({ getSearchData, textInput }: any) => {
 	const allProducts = useSelector(getCategoriesData);
 
-	const handleSearch = (query: string) => {
-		setTimeout(() => {
+	const handleSearch = useCallback(
+		(query: string) => {
 			const filtered = allProducts?.filter((item: { title: string }) =>
 				item?.title?.toLowerCase()?.includes(query?.toLowerCase())
 			);
 
 			getSearchData(filtered);
-		}, 500);
-	};
+		},
+		[getSearchData]
+	);
 
 	return (
 		<TextInput
@@ -30,4 +30,4 @@ const SearchTextInput = ({ getSearchData, textInput }: any) => {
 	);
 };
 
-export default SearchTextInput;
+export default React.memo(SearchTextInput);

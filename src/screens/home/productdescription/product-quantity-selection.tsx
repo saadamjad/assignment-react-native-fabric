@@ -47,4 +47,4 @@ const AddToCartButton = ({ getQauntity }: IPropsAddToCartButton) => {
 	);
 };
 
-export default AddToCartButton;
+export default React.memo(AddToCartButton);

@@ -41,13 +41,13 @@ interface IHeaderProps {
 	headerText?: isTypeString;
 	rightIcon?: boolean;
 	leftIcon?: boolean;
-	rightComponent?: any;
 	backgroundColor?: isTypeString;
-	onPress?: () => void;
+	onPress?: any;
 	rightImage?: ImageSourcePropType;
 	navigation: StackNavigationProp;
 	testID?: isTypeString;
 	isCrossIcon?: boolean;
+	goBackDisabled?: boolean;
 }
 interface IProductDescriptionProps {
 	getQauntity: isTypeNumberAndString;

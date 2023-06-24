@@ -3,11 +3,10 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 import styles from './styled';
-import { Images } from '../../utils/theme';
+import { Images, Colors } from '../../utils/theme';
 import { ImageView } from '../../components';
 import { getSliptedValue } from '../../utils/splitted-value';
 import { ROUTES } from '../../constants/navigation-routes';
-import colors from '../../utils/theme/colors';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategoriesData } from '../../state/selectors/features/category';
 import { UpdateCategoriesAction } from '../../state/actions';
@@ -86,7 +85,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ item, navigation }) => {
 								source={Images.images.wishlist}
 								style={[
 									styles.image,
-									{ tintColor: wishList ? colors.secondary : colors.primary },
+									{ tintColor: wishList ? Colors.secondary : Colors.primary },
 								]}
 								resizeMode='cover'
 							/>
@@ -122,4 +121,4 @@ const ProductCard: React.FC<ProductCardProps> = ({ item, navigation }) => {
 	);
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);

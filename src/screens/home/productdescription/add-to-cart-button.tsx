@@ -60,4 +60,4 @@ const AddToCartButton = ({ quantity }: IPropsAddToCartButton) => {
 	return _renderAddToCartButtons();
 };
 
-export default AddToCartButton;
+export default React.memo(AddToCartButton);

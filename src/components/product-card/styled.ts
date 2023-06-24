@@ -2,7 +2,6 @@
 
 import { StyleSheet } from 'react-native';
 import { Colors } from '../../utils/theme';
-import colors from '../../utils/theme/colors';
 
 const styles: IPropsStyleSheet = StyleSheet.create({
 	container: {
@@ -53,8 +52,8 @@ const styles: IPropsStyleSheet = StyleSheet.create({
 		borderRadius: 25,
 		overflow: 'hidden',
 		borderWidth: 0.5,
-		borderColor: colors.lighGrayColor,
-		backgroundColor: colors.background,
+		borderColor: Colors.lighGrayColor,
+		backgroundColor: Colors.background,
 		resizeMode: 'cover',
 		justifyContent: 'center',
 		alignItems: 'center',
