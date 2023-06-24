@@ -1,0 +1,9 @@
+/** @format */
+
+const ROUTES = {
+  HOME: 'HOME',
+  PRODUCT_DESCRIPTION: 'PRODUCT_DESCRIPTION',
+  CHECK_OUT: 'CHECK_OUT',
+};
+
+export {ROUTES};
