@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { getCartCount } from '../../state/selectors/features/addtocart';
 import { Colors, Images } from '../../utils/theme';
 import styles from './styled';
+import { useNavigateRoute } from '../../utils/hooks';
 
 const Header: React.FC<IHeaderProps> = ({
 	headerText,
@@ -26,13 +27,13 @@ const Header: React.FC<IHeaderProps> = ({
 }) => {
 	const cartItemsCount = useSelector(getCartCount);
 	const isCartCountShown = cartItemsCount > 0;
-	const navigationGoBack = () => navigation.goBack();
+	const { navigateToBack } = useNavigateRoute({ navigation });
 
 	const renderRight = () => {
 		if (isCrossIcon)
 			return (
 				<TouchableOpacity
-					onPress={navigationGoBack}
+					onPress={navigateToBack}
 					style={styles.crossIconContainer}>
 					<Image
 						source={Images.images.cross}
@@ -61,7 +62,7 @@ const Header: React.FC<IHeaderProps> = ({
 			activeOpacity={0.8}
 			disabled={goBackDisabled}
 			style={styles.leftContainer}
-			onPress={navigationGoBack}>
+			onPress={navigateToBack}>
 			{leftIcon && (
 				<Image
 					source={Images.images.leftArrow}

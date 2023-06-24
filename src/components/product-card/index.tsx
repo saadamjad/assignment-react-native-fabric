@@ -6,14 +6,17 @@ import styles from './styled';
 import { Images, Colors } from '../../utils/theme';
 import { ImageView } from '../../components';
 import { getSliptedValue } from '../../utils/splitted-value';
-import { ROUTES } from '../../constants/navigation-routes';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategoriesData } from '../../state/selectors/features/category';
 import { UpdateCategoriesAction } from '../../state/actions';
+import { useNavigateRoute } from '../../utils/hooks';
 
 const ProductCard: React.FC<ProductCardProps> = ({ item, navigation }) => {
 	const dispatch: allAnyTypes = useDispatch();
 	const allProducts = useSelector(getCategoriesData);
+	const { navigateToCheckOut, navigateToProductDescription } = useNavigateRoute(
+		{ navigation }
+	);
 
 	const { id, title, price, description, image, wishList } = item;
 
@@ -29,19 +32,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ item, navigation }) => {
 		dispatch(UpdateCategoriesAction(isSelectedData));
 	};
 	const navigationHanlder = () => {
-		navigation.navigate(ROUTES.PRODUCT_DESCRIPTION, {
-			productId: id,
-		});
-	};
-	const navigateToCheckOut = () => {
-		navigation.navigate(ROUTES.CHECK_OUT);
+		navigateToProductDescription(id);
 	};
 
 	const productDescription = (value: string) => {
-		let modifiedValue = '';
+		let modifiedValue: any = '';
 		getSliptedValue(value)
 			?.slice(0, 4)
-			?.map((item) => {
+			?.map((item: number) => {
 				modifiedValue = modifiedValue + ' ' + ' ' + item;
 			});
 		return modifiedValue;

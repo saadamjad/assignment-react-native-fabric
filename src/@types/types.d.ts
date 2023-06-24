@@ -1,13 +1,11 @@
+/** @format */
+
 type StackNavigationProp =
-  import('@react-navigation/stack').StackNavigationProp<
-    allAnyTypes,
-    allAnyTypes
-  >;
-type RouteProp = import('@react-navigation/core').RouteProp<
-	allAnyTypes,
-	allAnyTypes
->;
-type ReactChildren = import('react').ReactChildren;
+	import('@react-navigation/stack').StackNavigationProp<
+		allAnyTypes,
+		allAnyTypes
+	>;
+
 type IPropsStyleSheet = import('react-native').StyleSheet;
 type Component = import('react').Component;
 type isTypeNumber = number;
@@ -52,6 +50,7 @@ interface IHeaderProps {
 interface IProductDescriptionProps {
 	getQauntity: isTypeNumberAndString;
 }
+
 interface IPropsAddToCartButton {
 	getQauntity?: isTypeObject;
 	quantity?: isTypeNumberAndString;

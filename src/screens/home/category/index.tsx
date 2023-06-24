@@ -17,11 +17,12 @@ import {
 	getCategoriesData,
 	isLoading,
 } from '../../../state/selectors/features/category';
-import { ROUTES } from '../../../constants/navigation-routes';
+import { useNavigateRoute } from '../../../utils/hooks';
 
 const ProductList = ({ navigation }: ProductListProps) => {
 	const [page, setPage] = useState<number>(10);
 	const [searchData, setSearchData] = useState<allAnyTypes>();
+	const { navigateToCheckOut } = useNavigateRoute({ navigation });
 
 	const dispatch: allAnyTypes = useDispatch();
 	const allProducts = useSelector(getCategoriesData);
@@ -63,16 +64,13 @@ const ProductList = ({ navigation }: ProductListProps) => {
 			/>
 		);
 	};
-	const navigationHandler = () => {
-		navigation.navigate(ROUTES.CHECK_OUT);
-	};
 
 	const renderHeader = () => (
 		<Header
 			testID='headerComponent'
 			navigation={navigation}
 			headerText={staticText.NAME}
-			onPress={navigationHandler}
+			onPress={navigateToCheckOut}
 			goBackDisabled
 		/>
 	);
