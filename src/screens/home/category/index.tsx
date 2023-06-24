@@ -1,21 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import {View, FlatList} from 'react-native';
-import {Colors} from '../../../utils/theme';
-import {staticText} from '../../../utils/staticTexts';
+/** @format */
+
+import React, { useEffect, useState } from 'react';
+import { View, FlatList, BackHandler } from 'react-native';
+import { Colors } from '../../../utils/theme';
+import { staticText } from '../../../utils/staticTexts';
 import {
-  Header,
-  AppLoader,
-  ProductCard,
-  SearchTextInput,
-  ProductFilterBar,
+	Header,
+	AppLoader,
+	ProductCard,
+	SearchTextInput,
+	ProductFilterBar,
 } from '../../../components';
-import {useDispatch, useSelector} from 'react-redux';
-import {getCategoriesAction} from '../../../state/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCategoriesAction } from '../../../state/actions';
 import {
-  getCategoriesData,
-  isLoading,
+	getCategoriesData,
+	isLoading,
 } from '../../../state/selectors/features/category';
-import {ROUTES} from '../../../constants/navigation-routes';
 
 const ProductList = ({ navigation }: ProductListProps) => {
 	const [page, setPage] = useState<number>(10);
@@ -24,6 +25,7 @@ const ProductList = ({ navigation }: ProductListProps) => {
 	const dispatch: allAnyTypes = useDispatch();
 	const allProducts = useSelector(getCategoriesData);
 	const isLoader = useSelector(isLoading);
+
 	useEffect(() => {
 		dispatch(getCategoriesAction(page));
 	}, [page]);
@@ -61,7 +63,7 @@ const ProductList = ({ navigation }: ProductListProps) => {
 		);
 	};
 
-	const navigationHandler = () => navigation.navigate(ROUTES.CHECK_OUT);
+	const navigationHandler = () => BackHandler.exitApp();
 
 	const renderHeader = () => (
 		<Header
