@@ -35,41 +35,49 @@ type allAnyTypes =
 	| isTypeArray
 	| isTypeNull;
 
-interface IHeaderProps {
-	headerText?: isTypeString;
-	rightIcon?: boolean;
-	leftIcon?: boolean;
-	backgroundColor?: isTypeString;
-	onPress?: any;
-	rightImage?: ImageSourcePropType;
-	navigation: StackNavigationProp;
-	testID?: isTypeString;
-	isCrossIcon?: boolean;
-	goBackDisabled?: boolean;
-}
-interface IProductDescriptionProps {
-	getQauntity: isTypeNumberAndString;
-}
 
-interface IPropsAddToCartButton {
-	getQauntity?: isTypeObject;
-	quantity?: isTypeNumberAndString;
-}
-interface ICheckoutProps {
-	addToCartItems: isTypeArray;
-	deliveryFee: isTypeNumber;
-}
+ interface ImageSourcePropType {
+		height?: number;
+		width?: number;
+		scale?: number;
+		uri?: string;
+ }
 
-interface Product {
-	id: isTypeString;
-	title: isTypeString;
-	price: isTypeString;
-	description: isTypeString;
-	image: any;
-	navigation: StackNavigationProp;
-	wishList: boolean;
-	index?: number;
-}
+ interface IHeaderProps {
+		headerText?: isTypeString;
+		rightIcon?: boolean;
+		leftIcon?: boolean;
+		backgroundColor?: isTypeString;
+		onPress?: any;
+		rightImage?: ImageSourcePropType;
+		navigation: StackNavigationProp;
+		testID?: isTypeString;
+		isCrossIcon?: boolean;
+		goBackDisabled?: boolean;
+ }
+ interface IProductDescriptionProps {
+		getQauntity: isTypeNumberAndString;
+ }
+
+ interface IPropsAddToCartButton {
+		getQauntity?: isTypeObject;
+		quantity?: isTypeNumberAndString;
+ }
+ interface ICheckoutProps {
+		addToCartItems: isTypeArray;
+		deliveryFee: isTypeNumber;
+ }
+
+ interface Product {
+		id: isTypeString;
+		title: isTypeString;
+		price: isTypeString;
+		description: isTypeString;
+		image: ImageSourcePropType;
+		navigation: StackNavigationProp;
+		wishList: boolean;
+		index?: number;
+ }
 
 interface ProductCardProps {
 	item: Product;

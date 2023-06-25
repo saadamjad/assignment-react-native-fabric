@@ -6,7 +6,7 @@ const mockProductCardData: any = {
 	id: 1,
 	title: 'Test',
 	price: '$9.99',
-	description: 'This is a test',
+	description: 'This_is_description',
 	productImage: { uri: 'https://example.com/image.png' },
 	wishListImage: Images.images.wishlist,
 	cartImage: Images.images.wishlist,

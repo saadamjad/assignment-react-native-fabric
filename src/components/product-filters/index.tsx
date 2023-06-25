@@ -23,7 +23,7 @@ const ProductFilterBar = ({ testID = 'parentContainerFilter' }) => {
 	]);
 
 	const handlerFilter = (index: number) => {
-		const filterData = data.map((item, i) => {
+		const filterData = data?.map((item, i) => {
 			if (index === i) {
 				return { ...item, selected: !item.selected };
 			}

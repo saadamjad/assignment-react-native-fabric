@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ item, navigation }) => {
 	const handleWishlistSelection = () => {
 		const isSelectedData = allProducts?.map((item: Product) => {
 			if (item?.id == id) {
-				return { ...item, wishList: !item.wishList };
+				return { ...item, wishList: !item?.wishList };
 			}
 
 			return { ...item };
@@ -36,11 +36,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ item, navigation }) => {
 	};
 
 	const productDescription = (value: string) => {
-		let modifiedValue: any = '';
+		let modifiedValue: string = '';
 		getSliptedValue(value)
 			?.slice(0, 4)
-			?.map((item: number) => {
-				modifiedValue = modifiedValue + ' ' + ' ' + item;
+			?.map((item: string[]) => {
+				modifiedValue = modifiedValue + '' + '' + item;
 			});
 		return modifiedValue;
 	};

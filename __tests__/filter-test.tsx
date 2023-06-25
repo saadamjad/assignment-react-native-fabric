@@ -27,7 +27,7 @@ describe('ProductFilterBar', () => {
 		});
 	});
 
-	test('Check filter selection', () => {
+	test('Check filter selections', () => {
 		const { getAllByTestId } = render(<ProductFilterBar />);
 
 		const childButtons = getAllByTestId('child');
@@ -40,7 +40,7 @@ describe('ProductFilterBar', () => {
 		});
 	});
 
-	test('All Images  render or not ', () => {
+	test('Check all Images are render or not ', () => {
 		const { getAllByTestId } = render(<ProductFilterBar />);
 
 		const image1 = getAllByTestId('image1');

@@ -130,4 +130,4 @@ const CheckOut = ({ navigation }: INavigationProps) => {
 	);
 };
 
-export default CheckOut;
+export default React.memo(CheckOut);

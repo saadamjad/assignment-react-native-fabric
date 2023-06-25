@@ -26,11 +26,11 @@ describe('ProductCard', () => {
 	it('should render all child components', () => {
 		expect(parentComponent.length).toBe(1);
 	});
-	test('Check if the parent component is rendere', async () => {
+	test('Check if the parent component is render', async () => {
 		expect(headerComponent.length).toBe(1);
 	});
 
-	test('Check if the appLoaderComponent component is render', async () => {
+	test('Check if the appLoader component is render', async () => {
 		expect(loaderComponent.length).toBe(1);
 	});
 

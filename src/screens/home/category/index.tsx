@@ -100,4 +100,4 @@ const ProductList = ({ navigation }: ProductListProps) => {
 	);
 };
 
-export default ProductList;
+export default React.memo(ProductList);
